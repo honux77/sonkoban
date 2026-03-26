@@ -6,9 +6,9 @@ MSX BASIC으로 만든 간단한 소코반 게임입니다.
 
 **WebMSX에서 바로 플레이:**
 
-https://webmsx.org/?MACHINE=MSX2P&BASIC_URL=https://raw.githubusercontent.com/honux77/sonkoban/main/sokoban.bas
+https://webmsx.org/?MACHINE=MSX2P&DISK_URL=https://raw.githubusercontent.com/honux77/sonkoban/main/disk/sokoban.dsk
 
-> WebMSX가 열리면 자동으로 BASIC 파일을 로드하고 `RUN` 명령으로 실행하세요.
+> `scripts/build_sokoban_dsk.py`로 생성된 디스크 이미지를 사용합니다. 부팅 시 `AUTOEXEC.BAS`가 자동으로 게임을 실행합니다.
 
 ## 조작 방법
 
