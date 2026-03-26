@@ -1,7 +1,7 @@
 # run.ps1 - openMSX로 소코반 실행
 
 $openMSX = "C:\Program Files\openMSX\openmsx.exe"
-$gameDir  = Join-Path $PSScriptRoot "fdd"
+$gameDir  = Join-Path $PSScriptRoot "disk\sokoban.dsk"
 $machine  = "Boosted_MSX2+_JP"
 # $machine  = "Sony_HB-F1XDJ"          # 소니 MSX2+
 # $machine  = "Panasonic_FS-A1WSX"     # 파나소닉 MSX2+
@@ -13,9 +13,8 @@ if (-not (Test-Path $openMSX)) {
     exit 1
 }
 
-# sokoban.bas를 fdd 폴더에 복사
-Write-Host "sokoban.bas -> fdd 복사 중..."
-Copy-Item -Path (Join-Path $PSScriptRoot "sokoban.bas") -Destination $gameDir -Force
+# 게임 디스크 이미지 생성
+python .\scripts\build_sokoban_dsk.py
 
 Write-Host "openMSX 실행 중... (기계: $machine)"
 Write-Host "디스크: $gameDir"
